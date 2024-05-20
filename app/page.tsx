@@ -2,6 +2,7 @@ import AuthButton from "../components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
 import Nav from "@/components/(main)/Nav";
 import Landing from "@/components/(main)/Landing";
+import Header from "@/components/Header";
 
 export default async function Index() {
   const canInitSupabaseClient = () => {
@@ -24,10 +25,10 @@ export default async function Index() {
         </div>
       </nav>
 
-      <div className="flex-1 w-full flex flex-col gap-20 items-center mt-20 p-2">
-        <div className="">
-          {/* <Header /> */}
-          <Landing />
+      <div className="flex-1 w-full flex flex-col gap-20 items-center mt-20 p-3">
+        <div className="bg-red-50">
+          <Header />
+          {/* <Landing /> */}
         </div>
 
         <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs">

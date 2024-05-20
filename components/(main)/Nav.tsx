@@ -19,10 +19,10 @@ export default function Nav() {
 
   return (
     <>
-      <Link href="/protected" className="-m-1.5 p-1.5">
+      <div className="-m-1.5 p-1.5">
         <span className="sr-only">Body and soul spa</span>
         <Image src="/logo2.png" alt="logo navigation" height={60} width={60} />
-      </Link>
+      </div>
       <nav
         className="flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"

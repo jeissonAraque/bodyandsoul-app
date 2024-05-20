@@ -2,17 +2,19 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { MoveLeft } from 'lucide-react';
 import Image from "next/image";
 import AuthButton from "../AuthButton";
 import Nav from "./Nav";
 import Link from "next/link";
 
 
+
 const navigation = [
   { name: "Productos", href: "#" },
   { name: "Servicios", href: "#" },
   { name: "Marketplace", href: "#" },
-  { name: "Conocenos", href: "#" },
+  { name: "Reservas", href: "#" },
 ];
 
 export default function Navbar({ isSupabaseConnected }: any) {
@@ -20,16 +22,18 @@ export default function Navbar({ isSupabaseConnected }: any) {
 
 
   return (
-    <div className="bg-red-50 w-full">
+    <div className="bg-red-50 dark:bg-slate-600 w-full">
       <header className="inset-x-0 top-0 z-50 fixed bg-inherit">
         <nav
           className="flex items-center justify-between p-6 lg:px-8"
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2 text-sm font-semibold leading-6 text-gray-900">
             <span className="sr-only">Body and soul spa</span>
             <Image src="/logo2.png" alt="logo navigation" height={60} width={60} />
+            <MoveLeft />
+            <p>Volver</p>
           </Link>
           </div>
           <div className="flex lg:hidden">
@@ -106,6 +110,7 @@ export default function Navbar({ isSupabaseConnected }: any) {
                       {item.name}
                     </a>
                   ))}
+                  <p>carrito</p>
                 </div>
                 <div className="py-6">
                   <a

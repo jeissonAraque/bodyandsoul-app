@@ -18,7 +18,7 @@ export default async function Index() {
 
   return (
     <>
-      <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16 fixed bg-red-50">
+      <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16 fixed bg-red-50 dark:bg-slate-600">
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
           <Nav />
           {isSupabaseConnected && <AuthButton />}
@@ -26,7 +26,7 @@ export default async function Index() {
       </nav>
 
       <div className="flex-1 w-full flex flex-col gap-20 items-center mt-20 p-3">
-        <div className="bg-red-50">
+        <div className="bg-red-50 dark:bg-slate-600">
           <Header />
           {/* <Landing /> */}
         </div>

@@ -5,6 +5,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import AuthButton from "../AuthButton";
 import Nav from "./Nav";
+import Link from "next/link";
 
 
 const navigation = [
@@ -19,22 +20,17 @@ export default function Navbar({ isSupabaseConnected }: any) {
 
 
   return (
-    <div className="bg-red-100 w-full">
+    <div className="bg-red-50 w-full">
       <header className="inset-x-0 top-0 z-50 fixed bg-inherit">
         <nav
           className="flex items-center justify-between p-6 lg:px-8"
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Body and soul spa</span>
-              <Image
-                src="/logo2.png"
-                alt="logo navigation"
-                height={60}
-                width={60}
-              />
-            </a>
+          <Link href="/" className="-m-1.5 p-1.5">
+            <span className="sr-only">Body and soul spa</span>
+            <Image src="/logo2.png" alt="logo navigation" height={60} width={60} />
+          </Link>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -60,14 +56,14 @@ export default function Navbar({ isSupabaseConnected }: any) {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           {isSupabaseConnected && (
             // < AuthButton />
-            < Nav />
+            // < Nav />
 
-            // <a
-            //   href="#"
-            //   className="text-sm font-semibold leading-6 text-gray-900 hover:bg-red-300 hover:rounded-xl hover:p-1"
-            // >
-            //   Log in <span aria-hidden="true">&rarr;</span>
-            // </a>
+            <a
+              href="#"
+              className="text-sm font-semibold leading-6 text-gray-900 hover:bg-red-300 hover:rounded-xl hover:p-1"
+            >
+              Log in <span aria-hidden="true">&rarr;</span>
+            </a>
 
           )}
           </div>
@@ -78,7 +74,7 @@ export default function Navbar({ isSupabaseConnected }: any) {
           onClose={setMobileMenuOpen}
         >
           <div className="fixed inset-0 z-50" />
-          <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-red-100 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-red-50 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Body and soul spa</span>

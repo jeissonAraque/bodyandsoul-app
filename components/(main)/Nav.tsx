@@ -11,7 +11,7 @@ export default function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigation = [
-    { name: "Productos", href: "#" },
+    { name: "Productos", href: "/productos" },
     { name: "Servicios", href: "#" },
     { name: "Marketplace", href: "#" },
     { name: "Conocenos", href: "#" },
@@ -24,7 +24,7 @@ export default function Nav() {
         <Image src="/logo2.png" alt="logo navigation" height={60} width={60} />
       </div>
       <nav
-        className="flex items-center justify-between p-6 lg:px-8"
+        className="flex items-center justify-between p-6 lg:px-8 z-50"
         aria-label="Global"
       >
         <div className="flex lg:flex-1"></div>

@@ -31,7 +31,7 @@ export default function ProductInit() {
               <img src={product.image} alt={product.name} className="w-full h-48 object-cover mb-4 rounded-lg" />
               <h3 className="text-2xl font-bold mb-2">{product.name}</h3>
               <p className="text-neutral-500 dark:text-neutral-300 mb-4">{product.description}</p>
-              <p className="text-xl font-semibold text-primary dark:text-primary-400">${product.price.toFixed(2)}</p>
+              <p className="text-xl font-semibold text-primary dark:text-primary-400">${product.price.toFixed(3)}</p>
             </div>
           ))}
         </div>

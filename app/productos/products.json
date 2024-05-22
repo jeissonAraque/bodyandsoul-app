@@ -4,21 +4,21 @@
       "name": "Crema Hidratante",
       "description": "Crema hidratante para todo tipo de piel, enriquecida con vitaminas.",
       "price": 29.99,
-      "image": "ruta/a/la/imagen/crema-hidratante.jpg"
+      "image": "/products/crema_hidratante.jpg"
     },
     {
       "id": 2,
       "name": "Sérum Anti-edad",
       "description": "Sérum rejuvenecedor con ácido hialurónico y colágeno.",
-      "price": 49.99,
-      "image": "ruta/a/la/imagen/serum-anti-edad.jpg"
+      "price": 260.000,
+      "image": "/products/retiageserum.jpg"
     },
     {
       "id": 3,
       "name": "Exfoliante Corporal",
       "description": "Exfoliante corporal con partículas naturales para una piel suave y renovada.",
-      "price": 19.99,
-      "image": "ruta/a/la/imagen/exfoliante-corporal.jpg"
+      "price": 7.990,
+      "image": "/products/crema_exfoliante.png"
     }
   ]
   

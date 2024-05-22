@@ -1,15 +1,27 @@
-import React from 'react';
-import productsData from './products.json'; // Asegúrate de que la ruta sea correcta
+import React, { useState, useEffect } from 'react';
+import { createClient } from "@/utils/supabase/client";
 
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-}
+const client = createClient();
 
 export default function ProductInit() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+        try {
+            const { data, error }: any = await client.from('productos').select('*');
+            if (error) {
+              throw error;
+            }
+            setProducts(data);
+          } catch (error: any) {
+            console.error('Error fetching products:', error.message);
+          }
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <div className="container my-24 mx-auto md:px-6">
       <section className="mb-32 text-center">
@@ -26,7 +38,7 @@ export default function ProductInit() {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {productsData.map((product: Product) => (
+          {products.map((product: any) => (
             <div key={product.id} className="border p-4 rounded-lg shadow-md">
               <img src={product.image} alt={product.name} className="w-full h-48 object-cover mb-4 rounded-lg" />
               <h3 className="text-2xl font-bold mb-2">{product.name}</h3>

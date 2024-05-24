@@ -81,40 +81,6 @@ export default function Description() {
                 </p>
               </div>
             </div>
-
-            <div className="mb-12 flex border rounded-xl items-center p-2">
-              <div className="shrink-0">
-                <div className="rounded-md p-4 shadow-lg bg-[hsl(231,52.6%,20%)] dark:bg-[hsl(231,52.6%,30%)]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="2"
-                    stroke="currentColor"
-                    className="h-6 w-6 text-white"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div className="ml-4 grow">
-                <p className="mb-2 font-bold">Analíticas en vivo</p>
-                <p className="text-neutral-500 dark:text-neutral-300">
-                  En Body and Soul, te ofrecemos análisis en tiempo real para
-                  que puedas seguir tu progreso y mejorar tu bienestar día a
-                  día.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

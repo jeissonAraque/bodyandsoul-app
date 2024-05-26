@@ -1,14 +1,17 @@
 import React, { useState } from "react";
+import { Product } from "./AdminProducts";
 
 interface UpdateProductProps {
-  onUpdate: (productId: string, updates: any) => void;
-  onClose: () => void;
-}
+    onUpdate: (productId: string, updates: any) => void;
+    onClose: () => void;
+    idProduct: string;
+    initialData: Product; 
+  }
 
-const UpdateProduct: React.FC<UpdateProductProps> = ({ onUpdate, onClose }) => {
+const UpdateProduct: React.FC<UpdateProductProps> = ({ onUpdate, onClose, idProduct, initialData }) => {
   const [formData, setFormData] = useState({
-    productId: "",
-    updates: { name: "", description: "", price: 0 }, 
+    productId: idProduct,
+    updates: { ...initialData }, 
   });
 
   const handleChange = (

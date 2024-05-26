@@ -4,7 +4,7 @@ import { createClient } from "@/utils/supabase/client";
 import NewProduct from './NewProduct';
 import UpdateProduct from './UpdateProduct';
 
-interface Product {
+export interface Product {
   id: string;
   name: string;
   description: string;
@@ -17,6 +17,7 @@ export default function AdminProducts() {
   const [isCreating, setIsCreating] = useState(false);
   const [isUpdating, setIsUpdating] = useState(false); 
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedProductId, setSelectedProductId] = useState<string>(""); 
   const client = createClient();
 
   async function fetchProducts() {
@@ -25,7 +26,8 @@ export default function AdminProducts() {
   }
 
   const handleUpdateClick = (product: Product) => {
-    setSelectedProduct(product); 
+    setSelectedProduct(product);
+    setSelectedProductId(product.id); 
     setIsUpdating(true); 
   };
 
@@ -110,7 +112,7 @@ export default function AdminProducts() {
           <div key={product.id} className="bg-white rounded-lg shadow-md p-6">
             <h2 className="text-xl font-bold mb-2">{product.name}</h2>
             <p className="text-gray-600 mb-4">{product.description}</p>
-            <p className="text-gray-800 mb-2">Precio: ${product.price.toFixed(2)}</p>
+            <p className="text-gray-800 mb-2">Precio: ${product.price.toFixed(3)}</p>
             {product.image && <img src={product.image} alt={product.name} width={50} height={50} className="w-full h-32 object-cover mb-2" />}
             <div className="flex justify-center mt-10">
               <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded" onClick={() => handleUpdateClick(product)}>
@@ -124,7 +126,7 @@ export default function AdminProducts() {
         ))}
       </div>
       {isCreating && <NewProduct onCreate={createProduct} onClose={handleCloseModal} />}
-      {isUpdating && selectedProduct && <UpdateProduct  onUpdate={updateProduct}  onClose={handleCloseModal} />}
+      {isUpdating && selectedProduct && <UpdateProduct onUpdate={updateProduct} onClose={handleCloseModal} idProduct={selectedProductId} initialData={selectedProduct}/>}
     </div>
   );
 }

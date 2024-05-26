@@ -22,10 +22,10 @@ export default async function AuthButton() {
       <Link
         href={"/mySpace"}
       >
-        <p className="cursor-pointer">
+        <div className="cursor-pointer">
           {/* Hey, {user.email}! */}
           <p className="hover:bg-red-200 hover:p-2 hover:rounded-xl hover:text-gray-500">Ir a tu espacio</p>
-        </p>
+        </div>
       </Link>
       <form action={signOut}>
         <button className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover">

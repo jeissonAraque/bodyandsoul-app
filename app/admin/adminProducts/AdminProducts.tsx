@@ -15,7 +15,7 @@ interface Product {
 export default function AdminProducts() {
   const [products, setProducts] = useState<Product[]>([]);
   const [isCreating, setIsCreating] = useState(false);
-  const [isUpdating, setIsUpdating] = useState(false); // Nueva variable de estado para el modo de actualización
+  const [isUpdating, setIsUpdating] = useState(false); 
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const client = createClient();
 
@@ -25,8 +25,8 @@ export default function AdminProducts() {
   }
 
   const handleUpdateClick = (product: Product) => {
-    setSelectedProduct(product); // Establecer el producto seleccionado para la actualización
-    setIsUpdating(true); // Cambiar al modo de actualización
+    setSelectedProduct(product); 
+    setIsUpdating(true); 
   };
 
   async function uploadImage(image: File): Promise<any> {
@@ -76,9 +76,12 @@ export default function AdminProducts() {
   }
 
   async function deleteProduct(productId: string) {
-    const { error } = await client.from('productos').delete().eq('id', productId);
-    if (error) throw error;
-    await fetchProducts();
+    const confirmDelete = window.confirm('¿Estás seguro de que deseas eliminar este producto?');
+    if (confirmDelete) {
+      const { error } = await client.from('productos').delete().eq('id', productId);
+      if (error) throw error;
+      await fetchProducts();
+    }
   }
 
   useEffect(() => {
@@ -121,7 +124,7 @@ export default function AdminProducts() {
         ))}
       </div>
       {isCreating && <NewProduct onCreate={createProduct} onClose={handleCloseModal} />}
-      {isUpdating && selectedProduct && <UpdateProduct  onUpdate={updateProduct} onClose={handleCloseModal} />}
+      {isUpdating && selectedProduct && <UpdateProduct  onUpdate={updateProduct}  onClose={handleCloseModal} />}
     </div>
   );
 }

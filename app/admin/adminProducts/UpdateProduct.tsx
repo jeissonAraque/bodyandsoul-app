@@ -8,7 +8,7 @@ interface UpdateProductProps {
 const UpdateProduct: React.FC<UpdateProductProps> = ({ onUpdate, onClose }) => {
   const [formData, setFormData] = useState({
     productId: "",
-    updates: { name: "", description: "", price: 0 }, // Agrega valores iniciales para los campos
+    updates: { name: "", description: "", price: 0 }, 
   });
 
   const handleChange = (
@@ -25,6 +25,16 @@ const UpdateProduct: React.FC<UpdateProductProps> = ({ onUpdate, onClose }) => {
     e.preventDefault();
     onUpdate(formData.productId, formData.updates);
     onClose();
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setFormData((prevState) => ({
+        ...prevState,
+        image: file,
+      }));
+    }
   };
 
   return (
@@ -55,7 +65,50 @@ const UpdateProduct: React.FC<UpdateProductProps> = ({ onUpdate, onClose }) => {
             />
           </div>
           <div className="mb-4">
-            {/* Otros inputs para description y price */}
+            <label
+              htmlFor="description"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Descripción
+            </label>
+            <textarea
+              id="description"
+              name="description"
+              value={formData.updates.description}
+              onChange={handleChange}
+              className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="price"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Precio
+            </label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              value={formData.updates.price}
+              onChange={handleChange}
+              className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="image"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Imagen
+            </label>
+            <input
+              type="file"
+              id="image"
+              name="image"
+              onChange={handleImageChange}
+              className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
           </div>
           
           <div className="flex justify-end">

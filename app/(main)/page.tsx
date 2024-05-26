@@ -1,10 +1,11 @@
 import React from "react";
-import AuthButton from "../components/AuthButton";
+import AuthButton from "../../components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
 import Nav from "@/components/(main)/Nav";
 import Testimonials from "@/components/(main)/Testimonial";
 import Description from "@/components/(main)/Description";
 import Welcome from "@/components/(main)/Welcome";
+import '@mantine/core/styles.css';
 
 export default async function Index() {
   const canInitSupabaseClient = () => {

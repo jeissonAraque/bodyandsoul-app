@@ -1,5 +1,5 @@
 import { GeistSans } from "geist/font/sans";
-import "./globals.css";
+import "../globals.css";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -11,18 +11,16 @@ export const metadata = {
   description: "Spa Body and soul",
 };
 
-export default function RootLayout({
+export default function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={GeistSans.className}>
-      <body className="bg-background text-foreground">
-        <main >
-          {children}
-        </main>
-      </body>
-    </html>
+    <div className="bg-background text-foreground">
+      <main className="min-h-screen flex flex-col items-center">
+        {children}
+      </main>
+    </div>
   );
 }

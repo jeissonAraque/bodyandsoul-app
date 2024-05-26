@@ -1,8 +1,10 @@
+import ProductItem from "./ProductItem";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import Navbar from "../../components/(main)/Navbar";
 
-export default async function ProtectedPage() {
+
+export default async function ProtectedProductspage() {
+
   const supabase = createClient();
 
   const {
@@ -14,6 +16,8 @@ export default async function ProtectedPage() {
   }
 
   return (
-    < Navbar />
-  );
+    <div>
+      <ProductItem />
+    </div>
+  )
 }

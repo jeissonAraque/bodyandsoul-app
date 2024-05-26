@@ -1,10 +1,10 @@
-import ProductItem from "./ProductItem";
+import { Servicios } from "./components/Servicios";
 
 
 export default function Productspage() {
   return (
     <div>
-      <ProductItem />
+      <Servicios />
     </div>
   )
 }

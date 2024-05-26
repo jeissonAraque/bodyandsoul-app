@@ -20,10 +20,11 @@ export default async function AuthButton() {
   return user ? (
     <div className="flex items-center gap-4">
       <Link
-        href={"/protected"}
+        href={"/mySpace"}
       >
         <p className="cursor-pointer">
-          Hey, {user.email}!
+          {/* Hey, {user.email}! */}
+          <p className="hover:bg-red-200 hover:p-2 hover:rounded-xl hover:text-gray-500">Ir a tu espacio</p>
         </p>
       </Link>
       <form action={signOut}>

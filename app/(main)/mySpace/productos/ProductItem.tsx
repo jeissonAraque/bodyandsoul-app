@@ -8,7 +8,7 @@ export default function ProductItem() {
     <>
       <div className="flex gap-3 items-center m-7 border w-40  rounded-2xl justify-center hover:bg-gray-600">
         <MoveLeft />
-        <Link href="/">Volver</Link>
+        <Link href="/mySpace">Volver</Link>
       </div>
       <div className="w-full">
         <ProductInit />

@@ -15,7 +15,7 @@ const menuItems = [
     subTitle: "Visualizacion",
   },
   {
-    path: "/dashboard/users",
+    path: "/admin/adminUsers",
     icon: <CiUser size={40} />,
     title: "Usuarios",
   },
@@ -25,12 +25,12 @@ const menuItems = [
     title: "Productos",
   },
   {
-    path: "/dashboard/services",
+    path: "/admin/adminServices",
     icon: <TbHealthRecognition size={40} />,
     title: "Servicios",
   },
   {
-    path: "/dashboard/reservation",
+    path: "/admin/adminReservation",
     icon: <IoCalendarOutline size={40} />,
     title: "Reservas",
   },
